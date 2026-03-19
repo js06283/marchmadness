@@ -1,0 +1,77 @@
+{
+  "year": 2026,
+  "gender": "mens",
+  "regions": {
+    "East": [
+      { "seed": 1, "team": "Duke", "matchup_seed": 16, "opponent": "Siena" },
+      { "seed": 8, "team": "Ohio St.", "matchup_seed": 9, "opponent": "TCU" },
+      { "seed": 5, "team": "St. John's", "matchup_seed": 12, "opponent": "Northern Iowa" },
+      { "seed": 4, "team": "Kansas", "matchup_seed": 13, "opponent": "Cal Baptist" },
+      { "seed": 6, "team": "Louisville", "matchup_seed": 11, "opponent": "South Florida" },
+      { "seed": 3, "team": "Michigan St.", "matchup_seed": 14, "opponent": "North Dakota St." },
+      { "seed": 7, "team": "UCLA", "matchup_seed": 10, "opponent": "UCF" },
+      { "seed": 2, "team": "UConn", "matchup_seed": 15, "opponent": "Furman" }
+    ],
+    "West": [
+      { "seed": 1, "team": "Arizona", "matchup_seed": 16, "opponent": "Long Island" },
+      { "seed": 8, "team": "Villanova", "matchup_seed": 9, "opponent": "Utah St." },
+      { "seed": 5, "team": "Wisconsin", "matchup_seed": 12, "opponent": "High Point" },
+      { "seed": 4, "team": "Arkansas", "matchup_seed": 13, "opponent": "Hawaii" },
+      { "seed": 6, "team": "BYU", "matchup_seed": 11, "opponent": "Texas" },
+      { "seed": 3, "team": "Gonzaga", "matchup_seed": 14, "opponent": "Kennesaw St." },
+      { "seed": 7, "team": "Miami (FL)", "matchup_seed": 10, "opponent": "Missouri" },
+      { "seed": 2, "team": "Purdue", "matchup_seed": 15, "opponent": "Queens (N.C.)" }
+    ],
+    "South": [
+      { "seed": 1, "team": "Florida", "matchup_seed": 16, "opponent": "Prairie View A&M" },
+      { "seed": 8, "team": "Clemson", "matchup_seed": 9, "opponent": "Iowa" },
+      { "seed": 5, "team": "Vanderbilt", "matchup_seed": 12, "opponent": "McNeese" },
+      { "seed": 4, "team": "Nebraska", "matchup_seed": 13, "opponent": "Troy" },
+      { "seed": 6, "team": "North Carolina", "matchup_seed": 11, "opponent": "VCU" },
+      { "seed": 3, "team": "Illinois", "matchup_seed": 14, "opponent": "Penn" },
+      { "seed": 7, "team": "Saint Mary's", "matchup_seed": 10, "opponent": "Texas A&M" },
+      { "seed": 2, "team": "Houston", "matchup_seed": 15, "opponent": "Idaho" }
+    ],
+    "Midwest": [
+      { "seed": 1, "team": "Michigan", "matchup_seed": 16, "opponent": "Howard" },
+      { "seed": 8, "team": "Georgia", "matchup_seed": 9, "opponent": "Saint Louis" },
+      { "seed": 5, "team": "Texas Tech", "matchup_seed": 12, "opponent": "Akron" },
+      { "seed": 4, "team": "Alabama", "matchup_seed": 13, "opponent": "Hofstra" },
+      { "seed": 6, "team": "Tennessee", "matchup_seed": 11, "opponent": "Miami (Ohio)" },
+      { "seed": 3, "team": "Virginia", "matchup_seed": 14, "opponent": "Wright St." },
+      { "seed": 7, "team": "Kentucky", "matchup_seed": 10, "opponent": "Santa Clara" },
+      { "seed": 2, "team": "Iowa St.", "matchup_seed": 15, "opponent": "Tennessee St." }
+    ]
+  },
+  "first_four": [
+    {
+      "seed": 16,
+      "slot": "South 16 seed",
+      "team_a": "Prairie View A&M",
+      "team_b": "Lehigh",
+      "winner": "Prairie View A&M"
+    },
+    {
+      "seed": 11,
+      "slot": "West 11 seed",
+      "team_a": "Texas",
+      "team_b": "NC State",
+      "winner": "Texas"
+    },
+    {
+      "seed": 16,
+      "slot": "Midwest 16 seed",
+      "team_a": "Howard",
+      "team_b": "UMBC",
+      "winner": "Howard"
+    },
+    {
+      "seed": 11,
+      "slot": "East/other at-large slot",
+      "team_a": "Miami (Ohio)",
+      "team_b": "SMU",
+      "winner": "Miami (Ohio)"
+    }
+  ],
+  "source": "Transcribed from provided bracket image"
+}

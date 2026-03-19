@@ -141,6 +141,8 @@ Railway setup should use:
 - Start command: `npm start`
 - Environment variable: `DATABASE_URL` from Railway Postgres
 - Config file: [`/Users/jxshix/Documents/marchmadness/railway.json`](/Users/jxshix/Documents/marchmadness/railway.json) is included
+- Fallback deploy path: [`/Users/jxshix/Documents/marchmadness/Dockerfile`](/Users/jxshix/Documents/marchmadness/Dockerfile) is included if Railpack/Nixpacks fails
+- Explicit Nixpacks config: [`/Users/jxshix/Documents/marchmadness/nixpacks.toml`](/Users/jxshix/Documents/marchmadness/nixpacks.toml) and [`/Users/jxshix/Documents/marchmadness/start.sh`](/Users/jxshix/Documents/marchmadness/start.sh) are included
 
 Suggested deploy flow:
 
@@ -150,6 +152,11 @@ Suggested deploy flow:
 4. In the app service, attach the `DATABASE_URL` reference from the PostgreSQL service.
 5. Deploy. Railway will use the included `railway.json`.
 6. Open `/site/` on the deployed app URL.
+
+If Railway shows an error like "error creating build plan with railpack" or "Script start.sh not found":
+
+1. Redeploy after pushing the included `nixpacks.toml` and `start.sh`.
+2. If Railway still uses Railpack incorrectly, switch the service to Dockerfile-based deploy.
 
 Before redeploying after generating new brackets locally, rebuild the bundled data:
 
