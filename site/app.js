@@ -285,8 +285,8 @@ function renderSelectedBracket() {
   if (state.groundTruthOpen) {
     const mode = state.persistenceMode === "server" ? "database" : "browser";
     titleNode.textContent = "Ground truth editor";
-    metaNode.textContent = `Click the team that won each game. Saving to ${mode}.`;
-    summaryNode.textContent = "Later rounds unlock automatically as earlier winners are entered.";
+    metaNode.textContent = `Click the team that won each game. Double-click the selected winner to clear it. Saving to ${mode}.`;
+    summaryNode.textContent = "Later rounds unlock automatically as earlier winners are entered, and downstream rounds reset when you change or clear an earlier result.";
   } else {
     titleNode.textContent = bracket.title;
     metaNode.textContent = `Champion ${bracket.champion} · ${scoreBracket(bracket)} points`;
@@ -441,6 +441,7 @@ function renderGroundTruthTeamSlot(regionName, roundName, index, teamLabel, sele
 function bindGroundTruthBoardActions() {
   document.querySelectorAll("[data-gt-path][data-team]").forEach((button) => {
     button.addEventListener("click", onGroundTruthTeamClick);
+    button.addEventListener("dblclick", onGroundTruthTeamDoubleClick);
   });
 }
 
@@ -451,6 +452,25 @@ async function onGroundTruthTeamClick(event) {
   const team = button.dataset.team || null;
   setTruthWinner(regionName, roundName, index, team);
   clearDependentResults(regionName, roundName);
+  await rerenderAndPersistResults();
+}
+
+async function onGroundTruthTeamDoubleClick(event) {
+  const button = event.currentTarget;
+  const [regionName, roundName, rawIndex] = button.dataset.gtPath.split("|");
+  const index = Number(rawIndex);
+  const team = button.dataset.team || null;
+  const currentWinner = getTruthWinner(regionName, roundName, index);
+  if (!team || normalizeTeamLabel(team) !== normalizeTeamLabel(currentWinner)) {
+    return;
+  }
+
+  setTruthWinner(regionName, roundName, index, null);
+  clearDependentResults(regionName, roundName);
+  await rerenderAndPersistResults();
+}
+
+async function rerenderAndPersistResults() {
   renderHero();
   renderLeaderboard();
   renderSummaryStats();
